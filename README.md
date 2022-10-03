@@ -1,12 +1,6 @@
 
 ## Problem Description
-The controller receives trade fills from the fill servers in the following format at random intervals, there are only 10 different stocks available:
-{stock ticker: <string out of 10 possibilities>, price: <random positive price>, quantity: <random quantity>}f
-The controller receives random account splits from the AUM server at 30 second intervals.
-{account1: <random percentage>, account2: <random percentage>, …, accountn: <random percentage>} 
-The percentages should add up to 100%
-The job of the controller is to keep track of positions held by each account, as new fills come in it tries to divide the stocks (in whole stocks) so that each account has an overall position that matches the split from the AUM server as closely as possible, i.e., each account is allocated a number of stocks so that the overall value of the fills they have is as closely proportional to their AUM percentage as possible. Previous trade fills cannot be rearranged after they have been allocated.
-It should report the new overall positions to the position server at 10 second intervals, the position server should then print out the new positions/values.
+pass
 
 ## Solutions
 For control server and position server, API is built with Python Flask. Control server and position server use port 9998 and 9999.
