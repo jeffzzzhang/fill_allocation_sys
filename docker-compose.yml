@@ -1,0 +1,50 @@
+version: "3.7"
+services:
+  ctrl_api:
+    image: "ctrl_api"
+    build:
+      context: ./
+      dockerfile: Dockerfile_ctrl
+    restart: always
+    container_name: "ctrl_api"
+    ports:
+      - 9999:9999
+    environment:
+      TZ: "Asia/Shanghai"
+  
+  posi_api:
+    image: "posi_api"
+    build:
+      context: ./
+      dockerfile: Dockerfile_posi
+    restart: always
+    container_name: "posi_api"
+    ports:
+      - 9998:9998
+    environment:
+      TZ: "Asia/Shanghai"
+
+  server_simulator:
+    image: "server_simulator"
+    build:
+      context: ./
+      dockerfile: Dockerfile_server_simulator
+    restart: always
+    container_name: "server_simulator"
+    environment:
+      TZ: "Asia/Shanghai"
+    
+  redis_axa:
+    image: redis:6.2.5
+    container_name: redis_axa
+    privileged: true
+    volumes:
+      - ./data:/data
+      - ./conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./logs:/logs
+    command: ["redis-server","/usr/local/etc/redis/redis.conf"]
+    ports:
+      - 6379:6379
+    environment:
+      - TZ="Asia/Shanghai"
+
