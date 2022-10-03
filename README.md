@@ -24,11 +24,10 @@ Data structure in the request sent by controller server is as `{'accountn': {'st
 Here is the architecture diagram.
 ![System architecture](https://github.com/jeffzzzhang/fill_allocation_sys/blob/main/images/Screen%20Shot%202022-10-03%20at%203.19.37%20AM.png)
 
-And the running snapshot.
-![Running snapshot](https://github.com/jeffzzzhang/fill_allocation_sys/blob/main/images/Screen%20Shot%202022-10-03%20at%202.24.47%20AM.png)
-
 ## Manual
 Simply run `docker-compose up` to build images and containers, and launch services. Here is a snapshoot of running results. 
+![Running snapshot](https://github.com/jeffzzzhang/fill_allocation_sys/blob/main/images/Screen%20Shot%202022-10-03%20at%202.24.47%20AM.png)
+
 
 ## Files
 * `app_position.py`: the entry function of the position server, by running `python app_position.py` to launch the server.
