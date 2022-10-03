@@ -32,7 +32,18 @@ Here is a snapshoot of running results.
 
 And also the content printed by position server at a specific moment
 ```
-{'account1': {'stock_07': 930.0, 'stock_05': 941.0, 'stock_02': 1175.0, 'stock_03': 843.0, 'stock_08': 1022.0, 'stock_01': 1143.0, 'stock_10': 1000.0, 'stock_04': 1060.0, 'stock_06': 1132.0, 'stock_09': 1014.0}, 'account2': {'stock_07': 1184.0, 'stock_05': 955.0, 'stock_02': 1143.0, 'stock_03': 864.0, 'stock_08': 1151.0, 'stock_01': 1109.0, 'stock_10': 999.0, 'stock_04': 929.0, 'stock_06': 1062.0, 'stock_09': 829.0}, 'account3': {'stock_07': 1011.0, 'stock_05': 849.0, 'stock_02': 955.0, 'stock_03': 790.0, 'stock_08': 887.0, 'stock_01': 1001.0, 'stock_10': 950.0, 'stock_04': 940.0, 'stock_06': 772.0, 'stock_09': 830.0}, 'account4': {'stock_07': 705.0, 'stock_05': 542.0, 'stock_02': 735.0, 'stock_03': 653.0, 'stock_08': 726.0, 'stock_01': 706.0, 'stock_10': 779.0, 'stock_04': 709.0, 'stock_06': 555.0, 'stock_09': 589.0}, 'account5': {'stock_07': 195.0, 'stock_05': 153.0, 'stock_02': 219.0, 'stock_03': 108.0, 'stock_08': 293.0, 'stock_01': 153.0, 'stock_10': 164.0, 'stock_04': 205.0, 'stock_06': 267.0, 'stock_09': 278.0}}
+{'account1': {'stock_07': 930.0, 'stock_05': 941.0, 'stock_02': 1175.0, 'stock_03': 843.0, 
+'stock_08': 1022.0, 'stock_01': 1143.0, 'stock_10': 1000.0, 'stock_04': 1060.0, 'stock_06': 1132.0, 
+'stock_09': 1014.0}, 'account2': {'stock_07': 1184.0, 'stock_05': 955.0, 'stock_02': 1143.0, 
+'stock_03': 864.0, 'stock_08': 1151.0, 'stock_01': 1109.0, 'stock_10': 999.0, 'stock_04': 929.0, 
+'stock_06': 1062.0, 'stock_09': 829.0}, 'account3': {'stock_07': 1011.0, 'stock_05': 849.0, 
+'stock_02': 955.0, 'stock_03': 790.0, 'stock_08': 887.0, 'stock_01': 1001.0, 'stock_10': 950.0, 
+'stock_04': 940.0, 'stock_06': 772.0, 'stock_09': 830.0}, 'account4': {'stock_07': 705.0, 
+'stock_05': 542.0, 'stock_02': 735.0, 'stock_03': 653.0, 'stock_08': 726.0, 'stock_01': 706.0, 
+'stock_10': 779.0, 'stock_04': 709.0, 'stock_06': 555.0, 'stock_09': 589.0}, 
+'account5': {'stock_07': 195.0, 'stock_05': 153.0, 'stock_02': 219.0, 'stock_03': 108.0, 
+'stock_08': 293.0, 'stock_01': 153.0, 'stock_10': 164.0, 'stock_04': 205.0, 'stock_06': 267.0, 
+'stock_09': 278.0}}
 ```
 
 ## Files
