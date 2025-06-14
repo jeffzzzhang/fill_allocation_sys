@@ -52,7 +52,6 @@ And also the content printed by position server at a specific moment
 * `app_position.py`: the entry function of the position server, by running `python app_position.py` to launch the server.
 * `app_controller.py`: the entry function of the controller server, `python app_controller.py` to launch the server.
 * `server_simulator.py`: simulating 1) fill server, 2) AUM server, and 3) worker of controller server. Fill server generates new fills at a random gap and post to controller server. AUM server conducts similar task, at a fixed time gap, though. Worker of controller server periodically check  message queue to conduct fill and position update.
-* `constants.py`: some constants frequently called.
 * `~/images/`: directory for architecture diagram and a snapshot.
 * `Dockerfile_ctrl/post/server_simulator`: Dockerfiles for each function
 * `docker-compose.yml`: docker compose file
