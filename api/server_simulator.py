@@ -5,7 +5,9 @@ import logging
 import threading
 import redis
 import requests
+from pydantic import TypeAdapter
 from config.config import get_config
+from models.models import Fills
 
 ENV = "dev"
 CONFIG = get_config()[ENV]
@@ -16,17 +18,17 @@ PRICE_MAX = 50
 QUANTITY_MIN = 20
 QUANTITY_MAX = 40
 
+
 def fill_server():
     """
     Mimic fill server - send fill info at a random gap
     """
     while True:
-        logging.info("fill server: START")
-        logging.info("fill server: about to generate fills")
+        logging.info("fill server: START, about to generate fills")
         fills = generate_fills()
         logging.info("fill server: fills generated")
-        tmp = post_requests(fills)
-        print("tmp=", tmp)
+        tmp = post_requests(fills.model_dump())
+        print("tmp= ", tmp)
         # logging.info('DEBUG: tmp = ', tmp)
         if str(tmp).startswith("20"):
             logging.info("fill server: request sending SUCCESSFULLY")
@@ -38,13 +40,13 @@ def fill_server():
         time.sleep(pause_random)
         logging.info("fill server: END")
 
-def generate_fills():
+def generate_fills() -> Fills:
     # generate new fills
     stock = random.sample(STOCK_POOL, 1)[0]
     price = random.randint(PRICE_MIN, PRICE_MAX)
     quantity = random.randint(QUANTITY_MIN, QUANTITY_MAX)
     results = {"stock_ticker": stock, "price": price, "quantity": quantity}
-    return results
+    return TypeAdapter(Fills).validate_python(results)
 
 def post_requests(fi, url = CONFIG["url_ctrl_server"]):
     # post to controller server by default
