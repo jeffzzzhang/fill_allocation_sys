@@ -3,7 +3,7 @@ import logging
 import flask
 import redis
 from flask import Flask
-from models.config import get_config
+from config.config import get_config
 
 ENV = "dev"
 CONFIG = get_config()[ENV]

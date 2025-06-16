@@ -5,11 +5,16 @@ import logging
 import threading
 import redis
 import requests
-from models.config import get_config
+from config.config import get_config
 
 ENV = "dev"
 CONFIG = get_config()[ENV]
-
+STOCK_POOL = ["stock_01", "stock_02", "stock_03", "stock_04", "stock_05",
+              "stock_06", "stock_07", "stock_08", "stock_09", "stock_10"]
+PRICE_MIN = 10
+PRICE_MAX = 50
+QUANTITY_MIN = 20
+QUANTITY_MAX = 40
 
 def fill_server():
     """
@@ -35,11 +40,9 @@ def fill_server():
 
 def generate_fills():
     # generate new fills
-    stock_pool = ["stock_01", "stock_02", "stock_03", "stock_04", "stock_05", \
-                  "stock_06", "stock_07", "stock_08", "stock_09", "stock_10"]
-    stock = random.sample(stock_pool, 1)[0]
-    price = random.randint(10, 50)
-    quantity = random.randint(20, 40)
+    stock = random.sample(STOCK_POOL, 1)[0]
+    price = random.randint(PRICE_MIN, PRICE_MAX)
+    quantity = random.randint(QUANTITY_MIN, QUANTITY_MAX)
     results = {"stock_ticker": stock, "price": price, "quantity": quantity}
     return results
 
