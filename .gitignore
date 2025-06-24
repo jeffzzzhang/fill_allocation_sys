@@ -5,4 +5,5 @@ env/
 api/__pycache__/
 config/__pycache__/
 models/__pycache__/
+tests/__pycache__/
 .vscode/

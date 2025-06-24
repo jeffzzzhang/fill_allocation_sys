@@ -1,5 +1,6 @@
 import json
 import logging
+from typing import Optional
 import flask
 import redis
 from flask import Flask
@@ -11,7 +12,7 @@ CONFIG = get_config()[ENV]
 app = Flask(__name__)
 
 @app.route("/ctrl", methods=["GET", "POST"])
-def test():
+def test() -> Optional[str]:
     if flask.request.method == 'POST':
         """
         position = 'position' in flask.request.form and flask.request.form['position'] #

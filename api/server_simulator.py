@@ -48,7 +48,7 @@ def generate_fills() -> Fills:
     results = {"stock_ticker": stock, "price": price, "quantity": quantity}
     return TypeAdapter(Fills).validate_python(results)
 
-def post_requests(fi, url = CONFIG["url_ctrl_server"]):
+def post_requests(fi, url = CONFIG["url_ctrl_server"]) -> str:
     # post to controller server by default
     try:
         if isinstance(fi, dict):
@@ -80,7 +80,7 @@ def aum_server():
         logging.info(f"aum server: suspending in next {pause_gap} seconds")
         time.sleep(pause_gap)
 
-def generate_split():
+def generate_split() -> dict:
     """
     generate accounts split. Assume there are 5 accounts.
     Algorithm: randomly generate 5 numbers and assign them to the 5 accounts,
