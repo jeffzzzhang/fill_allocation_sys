@@ -1,6 +1,13 @@
 import unittest
-from api import server_simulator, STOCK_POOL, PRICE_MAX, PRICE_MIN, QUANTITY_MIN, QUANTITY_MAX
+from api import server_simulator
 from models.models import Fills
+
+STOCK_POOL = ["stock_01", "stock_02", "stock_03", "stock_04", "stock_05",
+              "stock_06", "stock_07", "stock_08", "stock_09", "stock_10"]
+PRICE_MIN = 10
+PRICE_MAX = 50
+QUANTITY_MIN = 20
+QUANTITY_MAX = 40
 
 
 class TestServerSimulator(unittest.TestCase):
