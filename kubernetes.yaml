@@ -1,0 +1,67 @@
+# ctrl_api
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ctrl_api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ctrl_api
+  template:
+    metadata:
+      labels:
+        app: ctrl_api
+    spec:
+      containers:
+      - name: ctrl_api
+        ports:
+          - containerPort: 9999
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ctrl_api
+spec:
+  selector:
+    app: ctrl_api
+  ports:
+    - port: 9999
+      targetPort: 9999
+
+---
+# redis
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis_axa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis_axa
+  template:
+    metadata:
+      labels:
+        app: redis_axa
+    spec:
+      containers:
+      - name: redis_axa
+        image: redis:6.2.5
+        env:
+        # - name: POSTGRES_USER
+        #   value: "user"
+        ports:
+        - containerPort: 6379
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis_axa
+spec:
+  selector:
+    app: redis_axa
+  ports:
+  - port: 6379
+    targetPort: 6379
